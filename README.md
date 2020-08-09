@@ -9,11 +9,11 @@ Project bootstrapped using Create React App. There is minimal styling applied.
 
 The homepage shows the current logged in user details (if one exists), otherwise the user is prompted to login or register.
 
-Base URL: <https://master.dt3wgj9e27nk8.amplifyapp.com/>
+- Base URL: <https://master.dt3wgj9e27nk8.amplifyapp.com/>
 
-Home page - /
-Login page - /login
-Register page - /register
+- Home page - /
+- Login page - /login
+- Register page - /register
 
 All registration fields are required.
 The only password restriction is that it must be 6 or more characters.
