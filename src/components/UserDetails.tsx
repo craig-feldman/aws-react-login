@@ -9,7 +9,6 @@ type UserDetailsProps = {
 
 const UserDetails = (props: UserDetailsProps) => {
   const history = useHistory();
-  ß;
   const payload = props.session.getIdToken().payload;
   console.log("Payload", { payload });
 
