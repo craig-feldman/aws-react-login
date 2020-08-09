@@ -57,7 +57,12 @@ const Login = (props: LoginProps) => {
         <input name="email" placeholder="email" type="email" ref={register} />
         {errors.email && errors.email.message}
 
-        <input name="password" type="password" ref={register} />
+        <input
+          name="password"
+          placeholder="password"
+          type="password"
+          ref={register}
+        />
         {errors.password && errors.password.message}
 
         <button type="submit">Login</button>
