@@ -10,7 +10,6 @@ type UserDetailsProps = {
 const UserDetails = (props: UserDetailsProps) => {
   const history = useHistory();
   const payload = props.session.getIdToken().payload;
-  console.log("Payload", { payload });
 
   const user = new CognitoUser({
     Username: payload.email,
@@ -33,7 +32,7 @@ const UserDetails = (props: UserDetailsProps) => {
       </dl>
 
       <button
-        onClick={(event) => {
+        onClick={() => {
           user.signOut();
           history.push("/login");
         }}

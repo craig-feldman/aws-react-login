@@ -23,8 +23,6 @@ const Login = (props: LoginProps) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit = handleSubmit((values) => {
-    console.log({ values });
-
     const user = new CognitoUser({
       Username: values.email,
       Pool: userPool,
@@ -37,8 +35,7 @@ const Login = (props: LoginProps) => {
 
     user.authenticateUser(authenticationDetails, {
       onSuccess: (session) => {
-        console.log("Login successful", session);
-        console.log(session.getIdToken().payload);
+        console.log("Login successful");
         props.setSession(session);
         history.push("/");
       },
@@ -49,8 +46,6 @@ const Login = (props: LoginProps) => {
       },
     });
   });
-
-  // Qwerty123!@#
 
   return (
     <div>
@@ -66,8 +61,9 @@ const Login = (props: LoginProps) => {
         {errors.password && errors.password.message}
 
         <button type="submit">Login</button>
+
+        {errorMessage}
       </form>
-      {errorMessage}
     </div>
   );
 };

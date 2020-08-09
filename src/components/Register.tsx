@@ -17,8 +17,7 @@ const Register = () => {
   const history = useHistory();
 
   const onSubmit = handleSubmit((values) => {
-    console.log({ values });
-
+    // Associate User with the provided name
     const attributeName = new CognitoUserAttribute({
       Name: "name",
       Value: values.name,
@@ -34,15 +33,13 @@ const Register = () => {
           console.error(err);
           setErrorMessage(err.message);
         } else {
-          // Navigate to login screen
+          // Navigate to login screen on success
           console.log(result);
           history.push("/login");
         }
       }
     );
   });
-
-  // Qwerty123!@#
 
   return (
     <div>
